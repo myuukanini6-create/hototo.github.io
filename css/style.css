@@ -1,0 +1,501 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #f7f3ed;
+    color: #333;
+    font-family: 'YuGothic', 'Yu Gothic', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* 初期状態：中央 */
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease; /* アニメーション */
+  z-index: 10;
+}
+
+.logo img {
+  width: 180px;
+  transition: all 0.5s ease;
+}
+
+.nav {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #b45f04; /* ホバー時に色を変える例 */
+}
+
+.mainvisual img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.mainvisual {
+    position: relative;
+}
+
+.mainvisual .catchcopy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #3b2f2f;
+}
+
+.mainvisual .catchcopy h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.mainvisual .catchcopy p {
+    font-size: 1.2rem;
+}
+
+.wrapper {
+    max-width: 1040px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.concept {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.concept .concept-logo img { /*突如として現れるロゴ非表示*/
+    width: 120px;
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 10;
+    /*↓岩井書いたやつ*/
+    transition: opacity 0.5s;
+    pointer-events: none;
+    opacity: 0;
+}
+
+    /*↓岩井書いたやつ*/
+.concept .concept-logo img.show{ /*突如として現れるロゴ表示*/
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.concept .text {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素を中央揃え */
+    justify-content: center;
+}
+
+.concept .section-title,
+.concept .description {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.concept .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: #556B2F;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.concept .btn:hover {
+    background-color: #5a7d5a;
+}
+
+.concept .text .description {
+    font-size: 15px;
+    line-height: 2;
+    text-align: justify;
+    padding-top: 15px;
+    margin-left: 60px;
+    max-width: 520px; /* 横幅を揃える */
+}
+
+.concept .text .section-title {
+    max-width: 520px;
+    padding: 0 60px 0 20px;
+    margin-left: 70px;
+}
+
+.concept .img {
+    width: 50%;
+}
+
+.concept .img img {
+    height: 480px;
+    margin-top: 30px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.concept .text .btn:hover {
+    background-color: #709c74; /* ホバー時の色 */
+}
+
+.menu {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu .section-title {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.menu-list li {
+    flex: 1 1 calc(33.333% - 20px); /* ← 横3列に固定 */
+    max-width: calc(33.333% - 20px);
+}
+
+.menu-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.menu-list .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.menu-list .price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.access {
+    background-color: #556B2F; /* オリーブグリーン */
+    color: #fff; /* 白文字で読みやすく */
+    padding: 30px 30px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.access .section-title {
+    font-size: 2rem;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.access-info p {
+    margin: 5px 0;
+    margin-left: 80px;
+}
+
+.access-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* スマホでは縦並び */
+    gap: 10px;
+}
+
+/* アクセス情報 */
+.access-info {
+    flex: 1;
+    min-width: 300px;
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 10px 20px;
+}
+
+.access-info .address {
+    display: block;
+    margin-left: 79px; /* インデントを少し入れる場合 */
+}
+
+/* 地図画像 */
+.access-map {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.access-map img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.access-map p {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding-top: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #b45f04; /* ホバー時に色を変える例 */
+}
+
+.footer .copyright {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*　スマートフォン */
+@media screen and (max-width: 767px) {
+    .nav {
+        font-size: 15px;
+    }
+
+    .mainvisual .catchcopy h2 {
+        font-size: 20px;
+        white-space: nowrap;
+        
+    }
+
+    .mainvisual .catchcopy p {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .logo {
+        width: 150px;
+        margin-top: 50px;
+    }
+
+    .concept {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* スマホで縦並びになる */
+    text-align: center; /* 子要素を中央寄せ */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.concept .section-title {
+    font-size: 20px;
+    margin-right: -15px;
+}
+
+.concept .text {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 60px;
+}
+
+.concept .btn {
+    margin-bottom: auto;
+    margin-left: 50px;
+}
+    .concept .img,
+    .concept .text {
+        width: 100%; /* 幅を全体に */
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .concept .img img {
+        height: auto; /* 高さ固定を外して自然に */
+        max-height: 200px; /* 必要なら制限 */
+        margin-top: 10px;
+    }
+
+    .concept .text .description {
+        font-size: 14px;
+        line-height: 1.8; /* 読みやすく */
+        text-align: center;
+    }
+
+    .concept .concept-logo img {
+        width: 100px;
+        left: 0;
+        top: 0;
+    }
+
+    .menu {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.menu-list li {
+        flex: 1 1 calc(50% - 10px); /* 横2列にして間隔も調整 */
+        max-width: calc(50% - 5px);
+}
+
+.menu .section-title {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+
+.menu-list img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.menu-list .name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.menu-list .price {
+    color: #666;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+
+.access {
+    background-color: #556B2F; /* オリーブグリーン */
+    color: #fff; /* 白文字で読みやすく */
+    padding: 30px 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.access .section-title {
+    font-size: 20px;
+    margin-left: 90px;
+    margin-top: 30px;
+}
+
+.access-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.access-info p {
+    margin: 5px 0;
+    margin-left: 70px;
+}
+
+.access-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* スマホでは縦並び */
+    gap: 10px;
+}
+
+/* アクセス情報 */
+.access-info {
+    flex: 1;
+    min-width: 300px;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.access-info .address {
+    display: block;
+    margin-left: 70px; /* インデントを少し入れる場合 */
+}
+
+.footer {
+    padding: 20px;
+}
+
+.footer .copyright {
+    font-size: 10px;
+}
+
+    @media screen and (max-width: 480px) {
+        .menu-list li {
+            flex: 1 1 100%; /* 横1列 */
+            max-width: 100%;
+        }
+    }
+}
